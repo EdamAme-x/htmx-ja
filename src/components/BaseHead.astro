@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 interface Props {
     title?: string;
     description?: string;
@@ -10,24 +12,25 @@ const description = Astro.props.description ?? "HTMX の日本語ドキュメン
 const image = Astro.props.image ?? "/favicon.png";
 ---
 <head lang="en_US" prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
-        <meta charset="utf-8" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <base href="/" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon shortcut" href={image} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:site_name" content={title} />
-        <meta property="og:url" content={Astro.url} />
-        <meta property="og:image" content={Astro.url + image.substring(1, image.length)} />
-        <meta property="og:image:width" content="1280" />
-        <meta property="og:image:height" content="720" />
-        <meta property="og:locale" content="ja_JP" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={Astro.url + image.substring(1, image.length)} />
-        <meta name="twitter:creator" content="@amex2189" />
-    </head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon shortcut" href={image} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={title} />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content={Astro.url + image.substring(1, image.length)} />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="720" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={Astro.url + image.substring(1, image.length)} />
+    <meta name="twitter:creator" content="@amex2189" />
+    <ViewTransitions />
+</head>
