@@ -7,34 +7,27 @@ interface Props {
 
 const title = Astro.props.title ?? "HTMX Docs - 日本語版";
 const description = Astro.props.description ?? "HTMX の日本語ドキュメントです。";
-const image = Astro.props.image ?? "/favion.png";
+const image = Astro.props.image ?? "/favicon.png";
 ---
 <head lang="en_US" prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <meta charset="utf-8" />
-        <title>Ame_x NET</title>
-        <meta name="description" content="Ame_x Profile Site" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <base href="/" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/x-icon" href="assets/favicon.webp" />
-        <link rel="canonical" href="https://ame-x.net" />
-        <meta name="preconnect" content="https://avatars.githubusercontent.com" />
-        <meta name="preconnect" content="https://cdn.jsdelivr.net" />
-        <meta name="preconnect" content="https://icongr.am" />
-        <meta name="preconnect" content="https://www.svgrepo.com" />
-        <meta name="framework" content="Angular" />
+        <link rel="icon shortcut" href={image} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Ame_x Net" />
-        <meta property="og:description" content="Ame_x Profile Site" />
-        <meta property="og:site_name" content="Ame_x Net" />
-        <meta property="og:url" content="https://www.ame-x.net" />
-        <meta property="og:image" content="https://www.ame-x.net/assets/favicon.webp" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:site_name" content={title} />
+        <meta property="og:url" content={Astro.url} />
+        <meta property="og:image" content={Astro.url + image.substring(1, image.length)} />
         <meta property="og:image:width" content="1280" />
         <meta property="og:image:height" content="720" />
         <meta property="og:locale" content="ja_JP" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Ame_x Net" />
-        <meta name="twitter:description" content="Ame_x Profile Site" />
-        <meta name="twitter:image" content="https://www.ame-x.net/assets/favicon.webp" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={Astro.url + image.substring(1, image.length)} />
         <meta name="twitter:creator" content="@amex2189" />
     </head>
