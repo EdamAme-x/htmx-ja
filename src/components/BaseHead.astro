@@ -32,5 +32,6 @@ const image = Astro.props.image ?? "/favicon.png";
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={Astro.url + image.substring(1, image.length)} />
     <meta name="twitter:creator" content="@amex2189" />
+    <script src="https://unpkg.com/htmx.org" async></script>
     <ViewTransitions />
 </head>
