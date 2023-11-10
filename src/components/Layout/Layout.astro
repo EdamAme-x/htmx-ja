@@ -1,9 +1,15 @@
 ---
 import BaseHead from '../BaseHead.astro';
 
+interface Props {
+    title?: string;
+    description?: string;
+    image?: string;
+}
+
 ---
 <html lang="ja">
-    <BaseHead />
+    <BaseHead {...Astro.props} />
     <body>
         <slot />
     </body>
