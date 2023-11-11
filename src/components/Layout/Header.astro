@@ -1,0 +1,34 @@
+---
+
+const navs = [
+    {
+        name: "Talk",
+        link: "https://htmx.org/talk"
+    },
+    {
+        name: "Examples",
+        link: "https://htmx.org/examples"
+    },
+    {
+        name: "Essays",
+        link: "https://htmx.org/essays"
+    },
+    {
+        name: "GitHub",
+        link: "https://github.com/bigskysoftware/htmx"
+    }
+]
+
+---
+<header class="h-[50px] flex items-center">
+    <div class="flex">
+        <img src="/favicon.png" alt="logo" class="h-[50px] w-[50px] ml-2" width="50" height="50" />
+    </div>
+    <nav class="ml-2"> 
+        {
+            navs.map(nav => (
+                <a href={nav.link} target="_blank" rel="noopener" class="ml-2 text-xl font-bold text-gray-500">{nav.name}</a>
+            ))
+        }
+    </nav>
+</header>
